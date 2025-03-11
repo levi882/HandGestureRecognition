@@ -1,0 +1,9 @@
+torch>=2.6.0
+torchvision>=0.21.0
+mediapipe>=0.10.21
+numpy>=1.26.4
+scikit-learn>=1.6.1
+matplotlib>=3.10.1
+seaborn>=0.13.2
+pillow>=11.1.0
+opencv-python>=4.11.0.86
