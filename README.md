@@ -216,6 +216,7 @@ HandGestureRecognition/
 ├── images/                          # README images
 │   ├── demo.gif                     # Demo animation
 │   ├── interface_example.jpg        # Interface screenshot
+│   ├── confusion_matrix.png         # Confusion Matrix screenshot
 │   └── gestures/                    # Example gesture images
 │       ├── peace.jpg                # Peace sign example
 │       ├── love.jpg                 # Love sign example
