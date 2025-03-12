@@ -211,7 +211,7 @@ def main():
     transforms_train = transforms.Compose([
         transforms.Grayscale(num_output_channels=1),  # Convert to grayscale (1 channel)
         transforms.Resize((128, 128)),  # Resize to 128x128
-        transforms.RandomRotation(10),  # Data augmentation
+        transforms.RandomRotation(45),  # Data augmentation
         transforms.RandomAffine(0, translate=(0.1, 0.1)),  # Data augmentation
         transforms.ToTensor(),  # Convert to tensor
         transforms.Normalize((0.5,), (0.5,))  # Normalize

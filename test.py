@@ -67,7 +67,7 @@ class EarlyStopping:
         torch.save(model.state_dict(), self.path)
 
 
-# Define the HandGestureClassifier model for 250x250 grayscale images with 4 classes
+# Define the HandGestureClassifier model for 128x128 grayscale images with 4 classes
 class HandGestureClassifier(nn.Module):
     def __init__(self, num_classes=4):
         super(HandGestureClassifier, self).__init__()
@@ -206,11 +206,11 @@ def plot_confusion_matrix(model, test_loader, class_names, device):
 def main():
     print(f"Using device: {comp_device}")
 
-    # Define transforms for 250x250 grayscale images
+    # Define transforms for 128x128 grayscale images
     transforms_train = transforms.Compose([
         transforms.Grayscale(num_output_channels=1),  # Convert to grayscale (1 channel)
-        transforms.Resize((128, 128)),  # Resize to 250x250
-        transforms.RandomRotation(10),  # Data augmentation
+        transforms.Resize((128, 128)),  # Resize to 128x128
+        transforms.RandomRotation(45),  # Data augmentation
         transforms.RandomAffine(0, translate=(0.1, 0.1)),  # Data augmentation
         transforms.ToTensor(),  # Convert to tensor
         transforms.Normalize((0.5,), (0.5,))  # Normalize
@@ -270,7 +270,7 @@ def main():
     # Save the model for inference
     # Move to CPU for compatibility
     best_model_cpu = best_model.to('cpu')
-    # Use a sample input with the correct dimensions (1x1x250x250)
+    # Use a sample input with the correct dimensions (1x1x128x128)
     traced_script_module = torch.jit.trace(best_model_cpu, torch.rand(1, 1, 128, 128))
     traced_script_module.save("best_hand_gesture_classifier.pt")
 

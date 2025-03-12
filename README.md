@@ -254,12 +254,17 @@ HandGestureRecognition/
    - A probability chart shows relative confidence for all classes
 
 ### Model Architecture
+![CNN architecture](images/architecture.svg)
+![CNN Visualization](images/cnn_visualization.png)
+![FC Layer Visualization](images/fc_layers_visualization.png)
 
 The CNN model consists of:
 - Input: 1x128x128 grayscale image
 - 5 convolutional blocks with batch normalization and max pooling
 - 3 fully connected layers with dropout regularization
 - Output: N classes (where N is the number of gestures)
+
+Full mathematical explanations and equations can be found here: [MATH.md](MATH.md)
 
 ## Roadmap
 

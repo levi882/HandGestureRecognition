@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 680">
+  <!-- Background -->
+  <rect width="1000" height="680" fill="#f8f9fa" />
+  
+  <!-- Title -->
+  <text x="500" y="30" font-family="Arial" font-size="20" text-anchor="middle" font-weight="bold">Hand Gesture Classifier: Detailed Architecture with All Components</text>
+  
+  <!-- Architecture with detailed components -->
+  <g transform="translate(50, 80)">
+    <!-- Block 1 -->
+    <rect x="0" y="0" width="120" height="200" fill="#f0f8ff" stroke="#4682b4" stroke-width="2" rx="5" ry="5" />
+    <text x="60" y="25" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Block 1</text>
+    
+    <rect x="10" y="40" width="100" height="20" fill="#f9d5e5" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="60" y="55" font-family="Arial" font-size="12" text-anchor="middle">Conv1 (3×3)</text>
+    
+    <rect x="10" y="70" width="100" height="20" fill="#e3eaa7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="60" y="85" font-family="Arial" font-size="12" text-anchor="middle">BatchNorm1</text>
+    
+    <rect x="10" y="100" width="100" height="20" fill="#b5ead7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="60" y="115" font-family="Arial" font-size="12" text-anchor="middle">ReLU</text>
+    
+    <rect x="10" y="130" width="100" height="20" fill="#eeeeee" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="60" y="145" font-family="Arial" font-size="12" text-anchor="middle">MaxPool (2×2)</text>
+
+    <!-- Dimension label for Block 1 -->
+    <text x="60" y="195" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">32×64×64</text>
+    
+    <!-- Block 2 -->
+    <rect x="150" y="0" width="120" height="200" fill="#f0f8ff" stroke="#4682b4" stroke-width="2" rx="5" ry="5" />
+    <text x="210" y="25" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Block 2</text>
+    
+    <rect x="160" y="40" width="100" height="20" fill="#f9d5e5" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="210" y="55" font-family="Arial" font-size="12" text-anchor="middle">Conv2 (3×3)</text>
+    
+    <rect x="160" y="70" width="100" height="20" fill="#e3eaa7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="210" y="85" font-family="Arial" font-size="12" text-anchor="middle">BatchNorm2</text>
+    
+    <rect x="160" y="100" width="100" height="20" fill="#b5ead7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="210" y="115" font-family="Arial" font-size="12" text-anchor="middle">ReLU</text>
+    
+    <rect x="160" y="130" width="100" height="20" fill="#eeeeee" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="210" y="145" font-family="Arial" font-size="12" text-anchor="middle">MaxPool (2×2)</text>
+    
+    <rect x="160" y="160" width="100" height="20" fill="#b5e7a0" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="210" y="175" font-family="Arial" font-size="12" text-anchor="middle">Dropout (0.3)</text>
+
+    <!-- Dimension label for Block 2 -->
+    <text x="210" y="195" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">64×32×32</text>
+    
+    <!-- Block 3 -->
+    <rect x="300" y="0" width="120" height="200" fill="#f0f8ff" stroke="#4682b4" stroke-width="2" rx="5" ry="5" />
+    <text x="360" y="25" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Block 3</text>
+    
+    <rect x="310" y="40" width="100" height="20" fill="#f9d5e5" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="360" y="55" font-family="Arial" font-size="12" text-anchor="middle">Conv3 (3×3)</text>
+    
+    <rect x="310" y="70" width="100" height="20" fill="#e3eaa7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="360" y="85" font-family="Arial" font-size="12" text-anchor="middle">BatchNorm3</text>
+    
+    <rect x="310" y="100" width="100" height="20" fill="#b5ead7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="360" y="115" font-family="Arial" font-size="12" text-anchor="middle">ReLU</text>
+    
+    <rect x="310" y="130" width="100" height="20" fill="#eeeeee" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="360" y="145" font-family="Arial" font-size="12" text-anchor="middle">MaxPool (2×2)</text>
+    
+    <!-- Dimension label for Block 3 -->
+    <text x="360" y="195" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">128×16×16</text>
+    
+    <!-- Block 4 -->
+    <rect x="450" y="0" width="120" height="200" fill="#f0f8ff" stroke="#4682b4" stroke-width="2" rx="5" ry="5" />
+    <text x="510" y="25" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Block 4</text>
+    
+    <rect x="460" y="40" width="100" height="20" fill="#f9d5e5" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="510" y="55" font-family="Arial" font-size="12" text-anchor="middle">Conv4 (3×3)</text>
+    
+    <rect x="460" y="70" width="100" height="20" fill="#e3eaa7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="510" y="85" font-family="Arial" font-size="12" text-anchor="middle">BatchNorm4</text>
+    
+    <rect x="460" y="100" width="100" height="20" fill="#b5ead7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="510" y="115" font-family="Arial" font-size="12" text-anchor="middle">ReLU</text>
+    
+    <rect x="460" y="130" width="100" height="20" fill="#eeeeee" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="510" y="145" font-family="Arial" font-size="12" text-anchor="middle">MaxPool (2×2)</text>
+    
+    <rect x="460" y="160" width="100" height="20" fill="#b5e7a0" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="510" y="175" font-family="Arial" font-size="12" text-anchor="middle">Dropout (0.3)</text>
+    
+    <!-- Dimension label for Block 4 -->
+    <text x="510" y="195" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">256×8×8</text>
+    
+    <!-- Block 5 -->
+    <rect x="600" y="0" width="120" height="200" fill="#f0f8ff" stroke="#4682b4" stroke-width="2" rx="5" ry="5" />
+    <text x="660" y="25" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Block 5</text>
+    
+    <rect x="610" y="40" width="100" height="20" fill="#f9d5e5" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="660" y="55" font-family="Arial" font-size="12" text-anchor="middle">Conv5 (3×3)</text>
+    
+    <rect x="610" y="70" width="100" height="20" fill="#e3eaa7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="660" y="85" font-family="Arial" font-size="12" text-anchor="middle">BatchNorm5</text>
+    
+    <rect x="610" y="100" width="100" height="20" fill="#b5ead7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="660" y="115" font-family="Arial" font-size="12" text-anchor="middle">ReLU</text>
+    
+    <rect x="610" y="130" width="100" height="20" fill="#eeeeee" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="660" y="145" font-family="Arial" font-size="12" text-anchor="middle">MaxPool (2×2)</text>
+    
+    <rect x="610" y="160" width="100" height="20" fill="#b5e7a0" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="660" y="175" font-family="Arial" font-size="12" text-anchor="middle">Dropout (0.3)</text>
+    
+    <!-- Dimension label for Block 5 -->
+    <text x="660" y="195" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">512×4×4</text>
+    
+    <!-- Flatten -->
+    <rect x="750" y="0" width="120" height="60" fill="#e6fffb" stroke="#13c2c2" stroke-width="2" rx="5" ry="5" />
+    <text x="810" y="25" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Flatten</text>
+    
+    <!-- Dimension label for Flatten -->
+    <text x="810" y="45" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">8192</text>
+    
+    <!-- Fully Connected Blocks -->
+    <rect x="0" y="240" width="120" height="175" fill="#fff0f6" stroke="#eb2f96" stroke-width="2" rx="5" ry="5" />
+    <text x="60" y="265" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">FC Block 1</text>
+    
+    <rect x="10" y="280" width="100" height="20" fill="#d3bccc" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="60" y="295" font-family="Arial" font-size="12" text-anchor="middle">FC1 (8192→1024)</text>
+    
+    <rect x="10" y="310" width="100" height="20" fill="#e3eaa7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="60" y="325" font-family="Arial" font-size="12" text-anchor="middle">BatchNorm FC1</text>
+    
+    <rect x="10" y="340" width="100" height="20" fill="#b5ead7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="60" y="355" font-family="Arial" font-size="12" text-anchor="middle">ReLU</text>
+    
+    <rect x="10" y="370" width="100" height="20" fill="#b5e7a0" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="60" y="385" font-family="Arial" font-size="12" text-anchor="middle">Dropout (0.5)</text>
+    
+    <!-- Dimension label for FC Block 1 -->
+    <text x="60" y="405" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">1024</text>
+    
+    <rect x="150" y="240" width="120" height="175" fill="#fff0f6" stroke="#eb2f96" stroke-width="2" rx="5" ry="5" />
+    <text x="210" y="265" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">FC Block 2</text>
+    
+    <rect x="160" y="280" width="100" height="20" fill="#d3bccc" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="210" y="295" font-family="Arial" font-size="12" text-anchor="middle">FC2 (1024→512)</text>
+    
+    <rect x="160" y="310" width="100" height="20" fill="#e3eaa7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="210" y="325" font-family="Arial" font-size="12" text-anchor="middle">BatchNorm FC2</text>
+    
+    <rect x="160" y="340" width="100" height="20" fill="#b5ead7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="210" y="355" font-family="Arial" font-size="12" text-anchor="middle">ReLU</text>
+    
+    <rect x="160" y="370" width="100" height="20" fill="#b5e7a0" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="210" y="385" font-family="Arial" font-size="12" text-anchor="middle">Dropout (0.5)</text>
+    
+    <!-- Dimension label for FC Block 2 -->
+    <text x="210" y="405" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">512</text>
+    
+    <rect x="300" y="240" width="120" height="115" fill="#fff0f6" stroke="#eb2f96" stroke-width="2" rx="5" ry="5" />
+    <text x="360" y="265" font-family="Arial" font-size="14" text-anchor="middle" font-weight="bold">Output Block</text>
+    
+    <rect x="310" y="280" width="100" height="20" fill="#d3bccc" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="360" y="295" font-family="Arial" font-size="12" text-anchor="middle">FC3 (512→N)</text>
+    
+    <rect x="310" y="310" width="100" height="20" fill="#ffd8bf" stroke="#333" stroke-width="1" rx="2" ry="2" />
+    <text x="360" y="325" font-family="Arial" font-size="12" text-anchor="middle">Softmax</text>
+    
+    <!-- Dimension label for Output Block -->
+    <text x="360" y="345" font-family="Arial" font-size="11" text-anchor="middle" font-weight="bold">N classes</text>
+    
+    <!-- Arrows connecting blocks -->
+    <defs>
+      <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+        <path d="M0,0 L0,6 L9,3 z" fill="#333" />
+      </marker>
+    </defs>
+
+    <!-- Horizontal connections -->
+    <line x1="120" y1="80" x2="150" y2="80" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="270" y1="80" x2="300" y2="80" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="420" y1="80" x2="450" y2="80" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="570" y1="80" x2="600" y2="80" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="720" y1="80" x2="750" y2="30" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    
+    <line x1="120" y1="315" x2="150" y2="315" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    <line x1="270" y1="315" x2="300" y2="280" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    
+    <!-- Vertical connections -->
+    <line x1="810" y1="60" x2="810" y2="220" stroke="#333" stroke-width="2" />
+    <line x1="810" y1="220" x2="60" y2="220" stroke="#333" stroke-width="2" />
+    <line x1="60" y1="220" x2="60" y2="240" stroke="#333" stroke-width="2" marker-end="url(#arrow)" />
+    
+    <!-- Legend - reorganized into 2 columns -->
+    <g transform="translate(450, 220)">
+      <text x="0" y="30" font-family="Arial" font-size="16" font-weight="bold">Legend:</text>
+      
+      <!-- Left column -->
+      <!-- Convolutional Layer -->
+      <rect x="0" y="50" width="20" height="20" fill="#f9d5e5" stroke="#333" stroke-width="1" rx="2" ry="2" />
+      <text x="30" y="65" font-family="Arial" font-size="14">Convolutional Layer</text>
+      
+      <!-- Pooling Layer -->
+      <rect x="0" y="80" width="20" height="20" fill="#eeeeee" stroke="#333" stroke-width="1" rx="2" ry="2" />
+      <text x="30" y="95" font-family="Arial" font-size="14">Max Pooling Layer</text>
+      
+      <!-- Batch Norm -->
+      <rect x="0" y="110" width="20" height="20" fill="#e3eaa7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+      <text x="30" y="125" font-family="Arial" font-size="14">Batch Normalization</text>
+      
+      <!-- ReLU -->
+      <rect x="0" y="140" width="20" height="20" fill="#b5ead7" stroke="#333" stroke-width="1" rx="2" ry="2" />
+      <text x="30" y="155" font-family="Arial" font-size="14">ReLU Activation</text>
+      
+      <!-- Dropout -->
+      <rect x="0" y="170" width="20" height="20" fill="#b5e7a0" stroke="#333" stroke-width="1" rx="2" ry="2" />
+      <text x="30" y="185" font-family="Arial" font-size="14">Dropout</text>
+      
+      <!-- Right column -->
+      <!-- Fully Connected -->
+      <rect x="200" y="50" width="20" height="20" fill="#d3bccc" stroke="#333" stroke-width="1" rx="2" ry="2" />
+      <text x="230" y="65" font-family="Arial" font-size="14">Fully Connected Layer</text>
+      
+      <!-- Flatten -->
+      <rect x="200" y="80" width="20" height="20" fill="#e6fffb" stroke="#333" stroke-width="1" rx="2" ry="2" />
+      <text x="230" y="95" font-family="Arial" font-size="14">Flatten Operation</text>
+      
+      <!-- Softmax -->
+      <rect x="200" y="110" width="20" height="20" fill="#ffd8bf" stroke="#333" stroke-width="1" rx="2" ry="2" />
+      <text x="230" y="125" font-family="Arial" font-size="14">Softmax</text>
+      
+      <!-- Blocks -->
+      <rect x="200" y="140" width="20" height="20" fill="#f0f8ff" stroke="#4682b4" stroke-width="2" rx="5" ry="5" />
+      <text x="230" y="155" font-family="Arial" font-size="14">Convolutional Block</text>
+      
+      <rect x="200" y="170" width="20" height="20" fill="#fff0f6" stroke="#eb2f96" stroke-width="2" rx="5" ry="5" />
+      <text x="230" y="185" font-family="Arial" font-size="14">Fully Connected Block</text>
+    </g>
+    
+    <!-- Training components - repositioned below FC layers -->
+    <g transform="translate(0, 430)">
+      <text x="0" y="20" font-family="Arial" font-size="16" font-weight="bold">Training Components:</text>
+      
+      <rect x="0" y="30" width="420" height="120" fill="#f9f0ff" stroke="#722ed1" stroke-width="2" rx="5" ry="5" />
+      
+      <text x="10" y="55" font-family="Arial" font-size="14" font-weight="bold">Loss Function:</text>
+      <text x="130" y="55" font-family="Arial" font-size="12">Cross-Entropy Loss</text>
+      
+      <text x="10" y="80" font-family="Arial" font-size="14" font-weight="bold">Optimizer:</text>
+      <text x="130" y="80" font-family="Arial" font-size="12">Adam (lr=0.001, weight_decay=1e-5)</text>
+      
+      <text x="10" y="105" font-family="Arial" font-size="14" font-weight="bold">Scheduler:</text>
+      <text x="130" y="105" font-family="Arial" font-size="12">ReduceLROnPlateau (factor=0.1, patience=5)</text>
+      
+      <text x="10" y="130" font-family="Arial" font-size="14" font-weight="bold">Early Stopping:</text>
+      <text x="130" y="130" font-family="Arial" font-size="12">10 epochs patience</text>
+    </g>
+  </g>
+</svg>
