@@ -66,7 +66,7 @@
 
 1. 克隆仓库：
    ```bash
-   git clone https://github.com/SirAlexiner/HandGestureRecognition.git
+   git clone https://github.com/levi882/HandGestureRecognition.git
    cd HandGestureRecognition
    ```
 
