@@ -277,30 +277,33 @@ def main():
 
     # Learning rate scheduler using ReduceLROnPlateau
     scheduler = torch.optim.lr_scheduler.ReduceLROnPlateau(
-        optimizer, mode='min', factor=0.1, patience=5, verbose=True
+        optimizer, mode='min', factor=0.1, patience=5
     )
 
     # Initialize EarlyStopping
     early_stopping = EarlyStopping(patience=10, verbose=True, delta=0.0, path='best_hand_gesture_model.pth')
 
     # Training loop
-    num_epochs = 500  # Adjust as needed
-    for epoch in range(1, num_epochs + 1):
-        train_loss, train_acc = train(model, comp_device, custom_train_loader, optimizer, criterion)
-        val_loss, val_acc = validate_test(model, comp_device, custom_val_loader, criterion)
+    num_epochs = 35  # Adjust as needed
+    try:  # 添加try块
+        for epoch in range(1, num_epochs + 1):
+            train_loss, train_acc = train(model, comp_device, custom_train_loader, optimizer, criterion)
+            val_loss, val_acc = validate_test(model, comp_device, custom_val_loader, criterion)
 
-        # Step the scheduler
-        scheduler.step(val_loss)
+            # Step the scheduler
+            scheduler.step(val_loss)
 
-        # Print metrics after each epoch
-        print(f"Epoch [{epoch}/{num_epochs}] - Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.2f}% | "
-              f"Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.2f}%")
+            # Print metrics after each epoch
+            print(f"Epoch [{epoch}/{num_epochs}] - Train Loss: {train_loss:.4f}, Train Acc: {train_acc:.2f}% | "
+                  f"Val Loss: {val_loss:.4f}, Val Acc: {val_acc:.2f}%")
 
-        # Early Stopping
-        early_stopping(val_loss, model)
-        if early_stopping.early_stop:
-            print("Early stopping triggered.")
-            break
+            # Early Stopping
+            early_stopping(val_loss, model)
+            if early_stopping.early_stop:
+                print("Early stopping triggered.")
+                break  # 退出循环，但程序不会终止
+    except KeyboardInterrupt:  # 捕获手动停止的异常
+        print("\nTraining interrupted by user. Loading the best model saved so far...")
 
     # Load the best model
     best_model = HandGestureClassifier(num_classes=len(class_names))
